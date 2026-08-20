@@ -367,6 +367,24 @@ button {
   flex-shrink: 0;
 }
 
+.brand-logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--gold-400);
+  box-shadow: 0 4px 15px rgba(223, 183, 108, 0.25);
+  background: #060e1a;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: rotate(6deg) scale(1.05);
+  box-shadow: 0 6px 20px rgba(223, 183, 108, 0.45);
+  border-color: var(--gold-300);
+}
+
 .brand-emblem {
   width: 46px;
   height: 46px;
@@ -1131,11 +1149,28 @@ button {
   margin-bottom: 0.75rem;
 }
 
-.practice-card p {
-  color: var(--text-light-dim);
-  font-size: 0.88rem;
-  line-height: 1.65;
-  margin-bottom: 1.6rem;
+.practice-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.4rem;
+}
+
+.practice-tags span {
+  font-size: 0.73rem;
+  padding: 0.22rem 0.65rem;
+  background: rgba(223, 183, 108, 0.08);
+  border: 1px solid rgba(223, 183, 108, 0.22);
+  color: var(--gold-300);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+}
+
+.practice-card:hover .practice-tags span {
+  background: rgba(223, 183, 108, 0.16);
+  border-color: var(--gold-400);
 }
 
 .practice-card .card-action {
@@ -1799,6 +1834,31 @@ textarea.form-control {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* ==========================================================================
+   OFFICIAL ADVOCATE BRAND IDENTITY SECTION
+   ========================================================================== */
+.brand-identity-grid {
+  background: linear-gradient(135deg, rgba(16, 33, 58, 0.85) 0%, rgba(7, 18, 32, 0.95) 100%);
+  border: 1.5px solid var(--gold-400);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(223, 183, 108, 0.15);
+  color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .brand-identity-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+    padding: 2.2rem 1.6rem;
+  }
 }
 
 /* ==========================================================================

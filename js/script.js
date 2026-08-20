@@ -267,4 +267,21 @@ _Sent via Yogesh Rana Advocate Official Website_`;
     // Reset form
     consultForm.reset();
   });
+
+  // --- Aesthetic 3D Card Subtle Tilt on Mouse Move ---
+  const tiltCard = document.querySelector('.hero-image-frame');
+  if (tiltCard && window.innerWidth > 992) {
+    tiltCard.addEventListener('mousemove', (e) => {
+      const rect = tiltCard.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const tiltX = (y / rect.height) * -8;
+      const tiltY = (x / rect.width) * 8;
+      tiltCard.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    tiltCard.addEventListener('mouseleave', () => {
+      tiltCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  }
 });
